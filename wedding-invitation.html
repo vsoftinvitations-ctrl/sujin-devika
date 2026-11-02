@@ -377,6 +377,17 @@
       text-align: center;
     }
 
+    .wedding-announce {
+      font-family: 'Brittany Signature', var(--script);
+      font-size: clamp(2.3rem, 7.5vw, 3.6rem);
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.25;
+      margin: 14px auto 0;
+      text-align: center;
+      letter-spacing: .02em;
+    }
+
     .body {
       font-family: var(--serif);
       font-size: clamp(1.25rem, 4.4vw, 1.5rem);
@@ -997,7 +1008,7 @@
       },
       tagline: "വിവാഹ മംഗള വേളയിലേക്ക് സ്നേഹപൂർവ്വം സ്വാഗതം",
       quotes: [
-        "പ്രിയരെ, ഞങ്ങളുടെ മകൻ സുജിൻ വിവാഹിതനാവുകയാണ്.",
+        "We are getting married",
         "A beautiful marriage is not something you find, it is something you build together."
       ],
       invite: `പ്രിയരെ,<br>ഞങ്ങളുടെ മകൻ <strong>സുജിൻ</strong> വിവാഹിതനാവുകയാണ്.<br><br>അന്നേദിവസം വൈകീട്ട് 3.00 മണിമുതൽ 6.00 മണിവരെ തൃപ്രയാർ കിഴക്കേനട ശാന്തിപാലസ് ഓഡിറ്റോറിയത്തിൽ വെച്ച് നടത്തുന്ന വിരുന്നുസൽക്കാരത്തിൽ പങ്കുകൊണ്ട് വധൂവരന്മാരെ ആശീർവ്വദിക്കുവാൻ താങ്കളുടെ കുടുംബസമേതമുള്ള സാന്നിധ്യം സാദരം ക്ഷണിച്ചുകൊള്ളുന്നു.`,
@@ -1076,7 +1087,7 @@
       </div>
     </h2>
     ${orn}
-    <p class="quote r">“${W.quotes[0]}”</p>
+    <p class="wedding-announce r">${W.quotes[0]}</p>
   </div>
 </section>
 
