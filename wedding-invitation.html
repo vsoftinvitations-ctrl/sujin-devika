@@ -710,6 +710,96 @@
       margin-top: 22px
     }
 
+    /* Countdown Timer */
+    .countdown-wrap {
+      margin-top: 8px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(6px, 2.4vw, 14px);
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .cd-box {
+      flex: 1;
+      min-width: 0;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(184, 152, 90, 0.35);
+      border-radius: 12px;
+      padding: clamp(12px, 3.2vw, 18px) clamp(4px, 1.5vw, 10px);
+      box-shadow: 0 4px 16px rgba(59, 52, 43, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .cd-box:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      box-shadow: 0 6px 20px rgba(184, 152, 90, 0.15);
+    }
+
+    .cd-num {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 6.2vw, 2.4rem);
+      line-height: 1;
+      font-weight: 500;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+      display: block;
+    }
+
+    .cd-label {
+      font-family: var(--sans);
+      font-size: clamp(0.55rem, 1.8vw, 0.68rem);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+      margin-top: 6px;
+      font-weight: 500;
+      display: block;
+    }
+
+    .cd-colon {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      color: var(--gold);
+      font-weight: 300;
+      line-height: 1;
+      margin-top: -12px;
+      opacity: 0.7;
+    }
+
+    .cd-celebrate {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+      color: var(--gold);
+      font-style: italic;
+      padding: 16px 28px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.6);
+      display: inline-block;
+    }
+
+    @media (max-width: 360px) {
+      .countdown {
+        gap: 4px;
+      }
+
+      .cd-box {
+        padding: 8px 3px;
+        border-radius: 8px;
+      }
+    }
+
     /* families */
     .fam {
       display: grid;
@@ -892,7 +982,8 @@
         month: "ഡിസംബർ 2026",
         dots: "04 • 12 • 2026",
         dotted: "04.12.2026",
-        malayalam: "1202 വൃശ്ചികം 18"
+        malayalam: "1202 വൃശ്ചികം 18",
+        iso: "2026-12-04T09:00:00+05:30"
       },
       time: "മുഹൂർത്തം<br>രാവിലെ 9.00 നും 9.30 നും<br>മദ്ധ്യേ",
       reception: "വൈകീട്ട് 3.00 മണിമുതൽ 6.00 മണിവരെ",
@@ -997,6 +1088,32 @@
   <div class="rule line-x r"></div>
   <div class="time r">${W.time}</div>
   <div class="small r" style="margin-top:10px">${D.malayalam}</div>
+
+  <div class="rule line-x r" style="margin:34px auto 26px"></div>
+  <div class="countdown-wrap r">
+    <p class="label" style="margin-bottom:18px;font-size:0.7rem;letter-spacing:0.25em">Counting Down to the Big Day</p>
+    <div class="countdown" id="countdown" aria-label="Countdown to wedding">
+      <div class="cd-box">
+        <span class="cd-num" id="cd-days">00</span>
+        <span class="cd-label">Days</span>
+      </div>
+      <div class="cd-colon" aria-hidden="true">:</div>
+      <div class="cd-box">
+        <span class="cd-num" id="cd-hours">00</span>
+        <span class="cd-label">Hours</span>
+      </div>
+      <div class="cd-colon" aria-hidden="true">:</div>
+      <div class="cd-box">
+        <span class="cd-num" id="cd-minutes">00</span>
+        <span class="cd-label">Mins</span>
+      </div>
+      <div class="cd-colon" aria-hidden="true">:</div>
+      <div class="cd-box">
+        <span class="cd-num" id="cd-seconds">00</span>
+        <span class="cd-label">Secs</span>
+      </div>
+    </div>
+  </div>
 </div></section>
 
 <section><div class="wrap">
@@ -1080,6 +1197,37 @@
 </div>` }
     document.getElementById('fmono').textContent = W.footMono;
     document.getElementById('fdate').textContent = D.dotted;
+
+    /* ===== Wedding Countdown Timer ===== */
+    const targetDate = new Date(D.iso || '2026-12-04T09:00:00+05:30').getTime();
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = targetDate - now;
+      const cd = document.getElementById('countdown');
+      if (!cd) return;
+
+      if (diff <= 0) {
+        cd.innerHTML = '<div class="cd-celebrate">✨ The Wedding Day is Here! 💍</div>';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+      const d = document.getElementById('cd-days');
+      const h = document.getElementById('cd-hours');
+      const m = document.getElementById('cd-minutes');
+      const s = document.getElementById('cd-seconds');
+
+      if (d) d.textContent = String(days).padStart(2, '0');
+      if (h) h.textContent = String(hours).padStart(2, '0');
+      if (m) m.textContent = String(mins).padStart(2, '0');
+      if (s) s.textContent = String(secs).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
     /* ===== Scroll reveal ===== */
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { threshold: .15, rootMargin: '0px 0px -6% 0px' });
