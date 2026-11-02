@@ -168,13 +168,15 @@
 
     .script-amp .amp {
       font-family: var(--serif);
-      font-style: italic;
-      color: var(--gold);
-      font-size: clamp(1.6rem, 5.5vw, 2.3rem);
+      font-style: normal;
+      font-weight: 500;
+      color: var(--ink);
+      font-size: clamp(2.4rem, 7.5vw, 3.4rem);
       opacity: 0;
-      transform: scale(.6) rotate(-8deg);
+      transform: scale(.6);
       display: block;
-      margin: 2px 0;
+      margin: 6px 0;
+      line-height: 1;
       transition: transform .6s ease;
     }
 
@@ -220,7 +222,7 @@
     }
 
     .intro-names.in .script-amp .amp {
-      animation: revealAmp .7s cubic-bezier(.34, 1.56, .64, 1) 1.8s forwards;
+      animation: revealAmp .6s cubic-bezier(.34, 1.56, .64, 1) .8s forwards;
     }
 
     .intro-names.in .script-bride .script-text {
@@ -275,12 +277,12 @@
     @keyframes revealAmp {
       0% {
         opacity: 0;
-        transform: scale(.6) rotate(-8deg);
+        transform: scale(.6);
       }
 
       100% {
         opacity: 1;
-        transform: scale(1) rotate(0deg);
+        transform: scale(1);
       }
     }
 
@@ -358,11 +360,13 @@
 
     .amp {
       font-family: var(--serif);
-      font-style: italic;
-      color: var(--gold);
-      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-style: normal;
+      font-weight: 500;
+      color: var(--ink);
+      font-size: clamp(2.4rem, 7.5vw, 3.4rem);
       display: block;
-      margin: 6px 0
+      margin: 8px 0;
+      line-height: 1;
     }
 
     .big {
@@ -1041,7 +1045,7 @@
       compliments: ["സുജ സന്തോഷ്"],
       phone: "9142549337"
     };
-    const PHOTOS = { a: "/inside.jpeg", b: "/preview.png" };
+    const PHOTOS = { a: "/gllry.jpeg", b: "/preview.png" };
     /* ===== Render ===== */
     const orn = '<svg class="orn r" viewBox="0 0 150 18" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 9h55M95 9h55"/><circle cx="75" cy="9" r="4"/><circle cx="65" cy="9" r="2.5"/><circle cx="85" cy="9" r="2.5"/></svg>';
     const pin = '<svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg>';
@@ -1176,7 +1180,7 @@
 
 <section><div class="wrap" style="max-width:560px">
   <div class="gal">
-    <div class="ph ga r"><img src="${PHOTOS.a}" onerror="this.onerror=null;this.src='inside.jpeg';" alt="സുജിൻ &amp; ദേവിക" loading="lazy" decoding="async"></div>
+    <div class="ph ga r"><img src="${PHOTOS.a}" onerror="this.onerror=null;this.src='gllry.jpeg';" alt="സുജിൻ &amp; ദേവിക" loading="lazy" decoding="async"></div>
     <div class="ph gb r"><img src="${PHOTOS.b}" onerror="this.onerror=null;this.src='preview.png';" alt="സുജിൻ &amp; ദേവിക" loading="lazy" decoding="async"></div>
   </div>
 </div></section>
