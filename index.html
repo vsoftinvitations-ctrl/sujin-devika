@@ -372,16 +372,18 @@
       font-style: italic;
       font-size: clamp(1.3rem, 4.6vw, 1.65rem);
       line-height: 1.6;
-      max-width: 30ch;
-      margin: 0 auto
+      max-width: 36ch;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .body {
       font-family: var(--serif);
       font-size: clamp(1.25rem, 4.4vw, 1.5rem);
-      line-height: 1.7;
-      max-width: 34ch;
-      margin: 0 auto
+      line-height: 1.8;
+      max-width: 44ch;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .small {
@@ -815,6 +817,13 @@
       margin: 20px auto 0;
       box-shadow: 0 10px 30px rgba(59, 52, 43, 0.04);
       backdrop-filter: blur(4px);
+      text-align: center;
+    }
+
+    .invite-card .body {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .phone-link {
@@ -1009,14 +1018,14 @@
 <section><div class="wrap">
   ${orn}
   <p class="label r">Wedding Invitation • വിവാഹ ക്ഷണക്കത്ത്</p>
-  <div class="invite-card r">
-    <p class="body" style="font-size:1.1rem;line-height:2;color:var(--ink);margin:0">
+  <div class="invite-card r" style="text-align:center">
+    <p class="body" style="font-size:1.15rem;line-height:2.2;color:var(--ink);margin:0 auto;text-align:center">
       ${W.invite}
     </p>
     <div class="rule line-x" style="margin:24px auto"></div>
-    <p class="small" style="font-size:0.95rem;color:var(--mute);margin:0">സ്നേഹാദരങ്ങളോടെ,</p>
-    <h3 style="font-family:var(--serif);font-size:1.45rem;color:var(--ink);margin-top:6px">${W.invitationFrom.names}</h3>
-    <p class="small" style="margin-top:6px;color:var(--mute)">${W.invitationFrom.address.join('<br>')}</p>
+    <p class="small" style="font-size:0.95rem;color:var(--mute);margin:0 auto;text-align:center">സ്നേഹാദരങ്ങളോടെ,</p>
+    <h3 style="font-family:var(--serif);font-size:1.45rem;color:var(--ink);margin-top:6px;text-align:center">${W.invitationFrom.names}</h3>
+    <p class="small" style="margin-top:6px;color:var(--mute);text-align:center">${W.invitationFrom.address.join('<br>')}</p>
   </div>
   ${orn}
 </div></section>
