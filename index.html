@@ -919,7 +919,7 @@
       },
       families: [
         {
-          title: "വരന്റെ മാതാപിതാക്കൾ (Groom's Parents)",
+          title: "Groom's Parents",
           names: "ചന്ദ്രൻ & സുനിത ചന്ദ്രൻ",
           lines: [
             "അമരിപറമ്പിൽ ഹൗസ്",
@@ -928,7 +928,7 @@
           ]
         },
         {
-          title: "വധുവിന്റെ മാതാപിതാക്കൾ (Bride's Parents)",
+          title: "Bride's Parents",
           names: "ശ്രീ. മണികണ്ഠൻ & ശ്രീമതി. ദിവ്യ മണികണ്ഠൻ",
           lines: [
             "ചിറയത്ത് ഹൗസ്, പി.ഒ. വടക്കുംമുറി",
@@ -957,7 +957,7 @@
 <section id="intro">
   <div class="cover r"><img src="${PHOTOS.a}" alt="സുജിൻ &amp; ദേവിക" decoding="async"></div>
   <div class="wrap">
-    <p class="label r">Together with their families • കുടുംബാംഗങ്ങളോടൊപ്പം</p>
+    <p class="label r">Together with their families</p>
     <h2 class="intro-names r" aria-label="${W.groom} & ${W.bride}">
       <div class="script-line script-groom">
         <span class="script-text">${W.groom}</span>
@@ -990,7 +990,7 @@
 </section>
 
 <section class="alt"><div class="wrap">
-  <p class="label r">The wedding day • വിവാഹ ശുഭദിനം</p>
+  <p class="label r">The wedding day</p>
   <div class="daynum r">${D.num}</div>
   <div class="month r">${D.month.toUpperCase()}</div>
   <div class="day r" style="margin-top:10px">${D.day}</div>
@@ -1000,25 +1000,25 @@
 </div></section>
 
 <section><div class="wrap">
-  <p class="label r">Wedding Venue • വിവാഹ വേദി (താലികെട്ട്)</p>
+  <p class="label r">The venue</p>
   <div class="r">${pin}</div>
   <h2 class="big r">${V.name}</h2>
   <p class="small r" style="margin-top:10px;font-size:1.05rem">${V.place}</p>
-  <a class="map-btn r" href="${V.map}" target="_blank" rel="noopener">📍 ഗൂഗിൾ മാപ്പിൽ കാണുക / View on Map</a>
+  <a class="map-btn r" href="${V.map}" target="_blank" rel="noopener">📍 View on Google Maps</a>
 </div></section>
 
 <section class="alt"><div class="wrap">
-  <p class="label r">Reception • വിരുന്നുസൽക്കാരം</p>
+  <p class="label r">Reception</p>
   <h2 class="big r" style="font-size:clamp(1.6rem,5vw,2.2rem)">${W.reception}</h2>
   <p class="small r" style="margin-top:12px;font-size:1.15rem;font-weight:500;color:var(--ink)">${W.receptionVenue}</p>
   <div class="rule line-x r"></div>
   <p class="note r">${W.notice}</p>
-  <a class="map-btn r" href="${W.receptionMap}" target="_blank" rel="noopener">📍 ഓഡിറ്റോറിയം മാപ്പിൽ കാണുക / View on Map</a>
+  <a class="map-btn r" href="${W.receptionMap}" target="_blank" rel="noopener">📍 View on Google Maps</a>
 </div></section>
 
 <section><div class="wrap">
   ${orn}
-  <p class="label r">Wedding Invitation • വിവാഹ ക്ഷണക്കത്ത്</p>
+  <p class="label r">Wedding Invitation</p>
   <div class="invite-card r" style="text-align:center">
     <p class="body" style="font-size:1.15rem;line-height:2.2;color:var(--ink);margin:0 auto;text-align:center">
       ${W.invite}
@@ -1032,7 +1032,7 @@
 </div></section>
 
 <section class="alt"><div class="wrap" style="max-width:900px">
-  <p class="label r">With the blessings of our families • കുടുംബാംഗങ്ങൾ</p>
+  <p class="label r">With the blessings of our families</p>
   <div class="fam">
     ${W.families[0] ? fam(W.families[0]) : ''}
     <div class="sep line-x"></div>
@@ -1054,10 +1054,10 @@
 </div></section>
 
 <section><div class="wrap">
-  <p class="label r">Best compliments from • ഉപചാരപൂർവ്വം</p>
+  <p class="label r">Best compliments from</p>
   <div class="comp r">${W.compliments.map(n => `<span>${n}</span>`).join('')}</div>
   <div style="margin-top:32px" class="r">
-    <p class="small" style="font-size:0.95rem;color:var(--mute)">ബന്ധപ്പെടാൻ / Contact</p>
+    <p class="small" style="font-size:0.95rem;color:var(--mute)">Contact</p>
     <p style="font-size:1.25rem;font-weight:500;margin-top:6px">
       ഫോൺ : <a class="phone-link" href="tel:${W.phone}">${W.phone}</a>
     </p>
@@ -1069,7 +1069,7 @@
   <p class="serif r" style="font-size:1.4rem;letter-spacing:.2em;margin-top:24px">${D.dots}</p>
   <div class="rule line-x r"></div>
   <p class="quote r">Together, forever begins here.</p>
-  <p class="small r" style="margin-top:28px">With love and blessings • സ്നേഹാദരങ്ങളോടെ</p>
+  <p class="small r" style="margin-top:28px">With love and blessings</p>
   ${orn}
 </div></section>`;
     function fam(f) {
