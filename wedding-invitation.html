@@ -168,15 +168,13 @@
 
     .script-amp .amp {
       font-family: var(--serif);
-      font-style: normal;
-      font-weight: 500;
-      color: var(--ink);
-      font-size: clamp(2.4rem, 7.5vw, 3.4rem);
+      font-style: italic;
+      color: var(--gold);
+      font-size: clamp(1.6rem, 5.5vw, 2.3rem);
       opacity: 0;
-      transform: scale(.6);
+      transform: scale(.6) rotate(-8deg);
       display: block;
-      margin: 6px 0;
-      line-height: 1;
+      margin: 2px 0;
       transition: transform .6s ease;
     }
 
@@ -222,7 +220,7 @@
     }
 
     .intro-names.in .script-amp .amp {
-      animation: revealAmp .6s cubic-bezier(.34, 1.56, .64, 1) .8s forwards;
+      animation: revealAmp .7s cubic-bezier(.34, 1.56, .64, 1) 1.8s forwards;
     }
 
     .intro-names.in .script-bride .script-text {
@@ -277,12 +275,12 @@
     @keyframes revealAmp {
       0% {
         opacity: 0;
-        transform: scale(.6);
+        transform: scale(.6) rotate(-8deg);
       }
 
       100% {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1) rotate(0deg);
       }
     }
 
@@ -360,13 +358,11 @@
 
     .amp {
       font-family: var(--serif);
-      font-style: normal;
-      font-weight: 500;
-      color: var(--ink);
-      font-size: clamp(2.4rem, 7.5vw, 3.4rem);
+      font-style: italic;
+      color: var(--gold);
+      font-size: clamp(1.5rem, 5vw, 2rem);
       display: block;
-      margin: 8px 0;
-      line-height: 1;
+      margin: 6px 0
     }
 
     .big {
