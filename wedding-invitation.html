@@ -690,8 +690,9 @@
 
     .time {
       font-family: var(--serif);
-      font-size: 1.6rem;
-      margin-top: 8px
+      font-size: clamp(1.25rem, 4.8vw, 1.55rem);
+      line-height: 1.55;
+      margin-top: 14px;
     }
 
     .pin {
@@ -893,7 +894,7 @@
         dotted: "04.12.2026",
         malayalam: "1202 വൃശ്ചികം 18"
       },
-      time: "മുഹൂർത്തം : രാവിലെ 9.00 നും 9.30 നും മദ്ധ്യേ",
+      time: "മുഹൂർത്തം<br>രാവിലെ 9.00 നും 9.30 നും<br>മദ്ധ്യേ",
       reception: "വൈകീട്ട് 3.00 മണിമുതൽ 6.00 മണിവരെ",
       receptionVenue: "തൃപ്രയാർ കിഴക്കേനട ശാന്തിപാലസ് ഓഡിറ്റോറിയം",
       receptionMap: "https://www.google.com/maps/search/?api=1&query=Santhi+Palace+Auditorium+Triprayar",
@@ -995,7 +996,7 @@
   <div class="day r" style="margin-top:10px">${D.day}</div>
   <div class="rule line-x r"></div>
   <div class="time r">${W.time}</div>
-  <div class="small r" style="margin-top:6px">${D.malayalam}</div>
+  <div class="small r" style="margin-top:10px">${D.malayalam}</div>
 </div></section>
 
 <section><div class="wrap">
